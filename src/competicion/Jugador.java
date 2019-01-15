@@ -10,6 +10,16 @@ package competicion;
  * @author Imad
  */
 public class Jugador {
-    
-    
+
+    private String nombre;
+    private int id;
+
+    Jugador(String nombre, int id) {
+        this.nombre = nombre;
+        this.id= id;
+    }
+
+    Jugador() {
+    }
+
 }
