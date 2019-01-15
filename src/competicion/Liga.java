@@ -12,31 +12,18 @@ import java.util.Scanner;
  *
  * @author Imad
  */
-public class Liga extends Competicion{
-    
+public class Liga extends Competicion {
+
     private ArrayList<Jugador> jugadores;
     private ArrayList<Jornada> jornadas;
     // El nombre de los equipos sera "jugador" + un numero
     public String NOMBRE;
 
-    
-     public Liga(int numJugadores)
-    {
-        Scanner sc = new Scanner(System.in); 
-        jugadores = new ArrayList();
-        jornadas = new ArrayList();
-        System.out.println("Introduce el nombre del jugador: ");
-        NOMBRE= sc.nextLine();
-        for(int i = 0; i < numJugadores; i++)
-        {
-            Jugador jugador = new Jugador();
-            jugadores.add(jugador);
-        }
-        
-        
-        
-      
+    public Liga(ArrayList<Jugador> jugadores, ArrayList<Jornada> jornadas) {
+
+        this.jugadores = new ArrayList();
+        this.jornadas = new ArrayList();
+
     }
-    
-    
+
 }
