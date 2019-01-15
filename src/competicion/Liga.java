@@ -15,6 +15,8 @@ public class Liga extends Competicion{
     
     private ArrayList<Jugador> jugadores;
     private ArrayList<Jornada> jornadas;
+    // El nombre de los equipos sera "jugador" + un numero
+    public static final String NOMBRE ="Jugador";
 
     
      public Liga(int numJugadores)
@@ -22,6 +24,11 @@ public class Liga extends Competicion{
         jugadores = new ArrayList();
         jornadas = new ArrayList();
         
+        for(int i = 0; i < numJugadores; i++)
+        {
+            Jugador jugador = new Jugador(NOMBRE + " " + (i + 1));
+            jugadores.add(jugador);
+        }
         
         
         
