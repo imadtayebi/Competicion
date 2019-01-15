@@ -5,12 +5,16 @@
  */
 package competicion;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author Imad
  */
 public abstract class Competicion {
 
-    protected int numJugadores;
+    protected ArrayList<Jugador> jugadores;
+    protected ArrayList<Partido> partidos;
+
     
 }

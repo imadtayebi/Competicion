@@ -5,12 +5,19 @@
  */
 package competicion;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author Imad
  */
 public class Torneo extends Competicion {
     
-    
+    public Torneo(ArrayList<Jugador> jugadores, ArrayList<Partido> partidos) {
+
+        this.jugadores = new ArrayList();
+        this.partidos = new ArrayList();
+ 
+    }
     
 }

@@ -14,10 +14,7 @@ import java.util.Scanner;
  */
 public class Liga extends Competicion {
 
-    private ArrayList<Jugador> jugadores;
-    private ArrayList<Partido> partidos;
-    // El nombre de los equipos sera "jugador" + un numero
-    public String NOMBRE;
+
 
     public Liga(ArrayList<Jugador> jugadores, ArrayList<Partido> partidos) {
 
