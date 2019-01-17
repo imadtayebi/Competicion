@@ -6,6 +6,7 @@
 package competicion;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Scanner;
 
 /**
@@ -14,13 +15,23 @@ import java.util.Scanner;
  */
 public class Liga extends Competicion {
 
+    public Liga(ArrayList<Jugador> jugadores) {
 
-
-    public Liga(ArrayList<Jugador> jugadores, ArrayList<Partido> partidos) {
-
-        this.jugadores = new ArrayList();
+        this.jugadores = jugadores;
         this.partidos = new ArrayList();
- 
+
     }
 
+    public void GenerarPartidos(ArrayList<Jugador> jugadores) {
+
+        Collections.shuffle(jugadores);
+        int indice = 0;
+        // Toma los equipos dos a dos para el emparejamiento
+        while (indice < jugadores.size()) {
+            partidos.add(new Partido(jugadores.get(indice).getNombre(), jugadores.get(indice + 1).getNombre()));
+            indice += 2;
+        }
+
+    }
+    
 }
