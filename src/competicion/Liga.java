@@ -13,19 +13,16 @@ public class Liga extends Competicion {
 
         this.jugadores = jugadores;
         this.partidos = new ArrayList();
-
     }
 
+    @Override
     public void GenerarPartidos(ArrayList<Jugador> jugadores) {
 
-        Collections.shuffle(jugadores);
-        int indice = 0;
-        // Toma los equipos dos a dos para el emparejamiento
-        while (indice < jugadores.size()) {
-            partidos.add(new Partido(jugadores.get(indice).getNombre(), jugadores.get(indice + 1).getNombre()));
-            indice += 2;
-        }
-
+        int num = 0;
+        for (int i = 0; i < jugadores.size()/2; i++) {
+            Partido p = new Partido(jugadores.get(num).getNombre(), jugadores.get(num + 1).getNombre());
+            partidos.add(p);
+            num = num + 2;
+        }  
     }
-    
 }
