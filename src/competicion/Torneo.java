@@ -17,6 +17,11 @@ public class Torneo extends Competicion {
 
     @Override
     public void GenerarPartidos(ArrayList<Jugador> jugadores) {
+        if(jugadores.size()%2 != 0)
+        {
+            Jugador j = new Jugador("Descanso");
+            jugadores.add(j);
+        }
         Collections.shuffle(jugadores);
         int indice = 0;
         // Toma los equipos dos a dos para el emparejamiento

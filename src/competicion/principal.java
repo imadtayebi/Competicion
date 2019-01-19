@@ -1,12 +1,8 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package competicion;
 
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
+import javax.swing.JPanel;
 
 /**
  *
@@ -42,6 +38,7 @@ public class principal extends javax.swing.JFrame {
         tf_numJug = new javax.swing.JTextField();
         boton_creaCompeti = new javax.swing.JButton();
         button_creaJug = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -73,29 +70,36 @@ public class principal extends javax.swing.JFrame {
             }
         });
 
+        jLabel1.setText("Restricciones: En caso de elegir torneo, el número de jugadores debe ser 2, 4, 8, 16 ó 32");
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(56, 56, 56)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(boton_creaCompeti))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(labelNumJug)
-                        .addGap(27, 27, 27)
-                        .addComponent(tf_numJug, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(button_creaJug))
-                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addGroup(jPanel1Layout.createSequentialGroup()
-                            .addComponent(rb_liga)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(rb_torneo))
-                        .addComponent(labelTipoCompeti)))
-                .addContainerGap(118, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(boton_creaCompeti)
+                        .addGap(56, 56, 56)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addGroup(jPanel1Layout.createSequentialGroup()
+                                    .addComponent(rb_liga)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(rb_torneo))
+                                .addComponent(labelTipoCompeti))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                    .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addComponent(labelNumJug)
+                                        .addGap(27, 27, 27)
+                                        .addComponent(tf_numJug, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addGap(18, 18, 18)
+                                .addComponent(button_creaJug)))
+                        .addGap(0, 108, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
@@ -114,7 +118,9 @@ public class principal extends javax.swing.JFrame {
                             .addComponent(rb_torneo))
                         .addGap(70, 70, 70)
                         .addComponent(labelNumJug)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 86, Short.MAX_VALUE)
+                .addGap(18, 18, 18)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 47, Short.MAX_VALUE)
                 .addComponent(boton_creaCompeti, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
@@ -145,12 +151,15 @@ public class principal extends javax.swing.JFrame {
         competicion.GenerarPartidos(jugadores);
         for(int i = 0; i < competicion.jugadores.size(); i++) 
         {
-            System.out.println("Jugador "+i+": "+competicion.jugadores.get(i).getNombre());
+            System.out.println("Jugador "+competicion.jugadores.get(i).getId()+": "+competicion.jugadores.get(i).getNombre());
         }
         for (int i = 0; i < competicion.partidos.size(); i++)
         {
             System.out.println(competicion.partidos.get(i).getLocal()+"-"+competicion.partidos.get(i).getVisitante());
         }
+        encurso ec = new encurso();
+        ec.setVisible(true);
+        this.setVisible(false);
     }//GEN-LAST:event_boton_creaCompetiActionPerformed
 
     private void button_creaJugActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button_creaJugActionPerformed
@@ -205,6 +214,7 @@ public class principal extends javax.swing.JFrame {
     private javax.swing.JButton boton_creaCompeti;
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.JButton button_creaJug;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JLabel labelNumJug;
     private javax.swing.JLabel labelTipoCompeti;
