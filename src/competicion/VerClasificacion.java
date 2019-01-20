@@ -5,6 +5,10 @@
  */
 package competicion;
 
+import com.sun.javafx.scene.control.skin.VirtualFlow;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.Comparator;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 
@@ -29,50 +33,60 @@ public class VerClasificacion extends javax.swing.JFrame {
         competicion = c;
         tabClasi = new JTable(modeloTabClasi);
         initComponents();
+        dibujaTabClasificacion();
+        rellenarTabClasificacion();
     }
 
-    private void dibujaTabPartidos()
+    private void dibujaTabClasificacion()
     {
         tabClasi.setModel(modeloTabClasi);
-        String[] columnasTabla = {"Pos","Jugador","Puntos","P. Jugados","P.Ganados","P.Empatados","P.Perdidos","Goles F","Goles C"};
+        String[] columnasTabla = {"Pos","Jugador","Ptos","PJ","PG","PE","PP","GF","GC"};
         modeloTabClasi.setColumnIdentifiers(columnasTabla);
         
         // Para no permitir el redimensionamiento de las columnas con el ratón
         tabClasi.getTableHeader().setResizingAllowed(false);
         
         // Así se fija el ancho de las columnas
-        tabClasi.getColumnModel().getColumn(0).setPreferredWidth(50);
-        tabClasi.getColumnModel().getColumn(1).setPreferredWidth(20);
+        tabClasi.getColumnModel().getColumn(0).setPreferredWidth(20);
+        tabClasi.getColumnModel().getColumn(1).setPreferredWidth(50);
         tabClasi.getColumnModel().getColumn(2).setPreferredWidth(20);
-        tabClasi.getColumnModel().getColumn(3).setPreferredWidth(50);
-        tabClasi.getColumnModel().getColumn(4).setPreferredWidth(50);
-        tabClasi.getColumnModel().getColumn(5).setPreferredWidth(50);
-        tabClasi.getColumnModel().getColumn(6).setPreferredWidth(50);
-        tabClasi.getColumnModel().getColumn(7).setPreferredWidth(50);
-        tabClasi.getColumnModel().getColumn(8).setPreferredWidth(50);
+        tabClasi.getColumnModel().getColumn(3).setPreferredWidth(20);
+        tabClasi.getColumnModel().getColumn(4).setPreferredWidth(20);
+        tabClasi.getColumnModel().getColumn(5).setPreferredWidth(20);
+        tabClasi.getColumnModel().getColumn(6).setPreferredWidth(20);
+        tabClasi.getColumnModel().getColumn(7).setPreferredWidth(20);
+        tabClasi.getColumnModel().getColumn(8).setPreferredWidth(20);
     }
     
-    private void rellenarTabPartidos()
+    private void rellenarTabClasificacion()
     {
-        Object[] columna = new Object[4];
+        Object[] columna = new Object[9];
         
-        for(int i = 0; i < competicion.partidos.size(); i++)
+        Collections.sort(competicion.jugadores, new Comparator<Jugador>()
         {
-            columna[0] = competicion.partidos.get(i).getLocal();
-            columna[1] = competicion.partidos.get(i).getGolesL();
-            columna[2] = competicion.partidos.get(i).getGolesV();
-            columna[3] = competicion.partidos.get(i).getVisitante();
+            @Override
+            public int compare(Jugador obj1, Jugador obj2)
+            {
+                return obj1.getPuntos().compareTo(obj2.getPuntos());
+            }
+        });
+        
+        for(int i = 0; 0 != competicion.jugadores.size(); i++)
+        {
+            
+            columna[0] = i+1;
+            columna[1] = competicion.jugadores.get(i).getNombre();
+            columna[2] = competicion.jugadores.get(i).getPuntos();
+            columna[3] = competicion.jugadores.get(i).getPartGanados()+competicion.jugadores.get(i).getPartEmpatados()+competicion.jugadores.get(i).getPartPerdidos();
+            columna[4] = competicion.jugadores.get(i).getPartGanados();
+            columna[5] = competicion.jugadores.get(i).getPartEmpatados();
+            columna[6] = competicion.jugadores.get(i).getPartPerdidos();
+            columna[7] = competicion.jugadores.get(i).getgFavor();
+            columna[8] = competicion.jugadores.get(i).getgContra();
             modeloTabClasi.addRow(columna);
         }
     }
-    
-    private void vaciarTabPartidos()
-    {
-        //int i = modeloTabExp.getRowCount();
-        
-        while (modeloTabClasi.getRowCount() > 0)
-            modeloTabClasi.removeRow(0);
-    }
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always

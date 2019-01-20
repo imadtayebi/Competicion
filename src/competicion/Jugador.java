@@ -6,7 +6,7 @@ import java.util.concurrent.atomic.AtomicInteger;
  *
  * @author Imad
  */
-public class Jugador 
+public class Jugador implements Comparable<Jugador>
 {
     private static final AtomicInteger count = new AtomicInteger(0);
     private String nombre;
@@ -22,8 +22,14 @@ public class Jugador
     {
         this.id = count.incrementAndGet();
         this.nombre = nombre;
+        partGanados = 0;
+        partPerdidos = 0;
+        partEmpatados = 0;
+        gFavor = 0;
+        gContra = 0;
+        puntos = 0;
     }
-
+    
     public int getId()
     {
         return id;
