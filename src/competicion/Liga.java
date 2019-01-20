@@ -55,7 +55,6 @@ public class Liga extends Competicion {
         {
             p = new Partido(local[i], visita[i]);
             partidos.add(p);
-            System.out.println("Clase Partido: "+partidos.get(i).getLocal() + " vs " + partidos.get(i).getVisitante() + "\n");
         }
     }
 }

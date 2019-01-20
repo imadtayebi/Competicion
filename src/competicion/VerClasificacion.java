@@ -6,6 +6,7 @@
 package competicion;
 
 import com.sun.javafx.scene.control.skin.VirtualFlow;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.Comparator;
@@ -61,28 +62,22 @@ public class VerClasificacion extends javax.swing.JFrame {
     private void rellenarTabClasificacion()
     {
         Object[] columna = new Object[9];
+        ArrayList<Jugador> j = new ArrayList<>();
+        j = competicion.jugadores;
         
-        Collections.sort(competicion.jugadores, new Comparator<Jugador>()
-        {
-            @Override
-            public int compare(Jugador obj1, Jugador obj2)
-            {
-                return obj1.getPuntos().compareTo(obj2.getPuntos());
-            }
-        });
+        j.sort(Comparator.comparing(Jugador::getPuntos).reversed());
         
-        for(int i = 0; 0 != competicion.jugadores.size(); i++)
+        for(int i = 0; i < competicion.jugadores.size(); i++)
         {
-            
             columna[0] = i+1;
-            columna[1] = competicion.jugadores.get(i).getNombre();
-            columna[2] = competicion.jugadores.get(i).getPuntos();
-            columna[3] = competicion.jugadores.get(i).getPartGanados()+competicion.jugadores.get(i).getPartEmpatados()+competicion.jugadores.get(i).getPartPerdidos();
-            columna[4] = competicion.jugadores.get(i).getPartGanados();
-            columna[5] = competicion.jugadores.get(i).getPartEmpatados();
-            columna[6] = competicion.jugadores.get(i).getPartPerdidos();
-            columna[7] = competicion.jugadores.get(i).getgFavor();
-            columna[8] = competicion.jugadores.get(i).getgContra();
+            columna[1] = j.get(i).getNombre();
+            columna[2] = j.get(i).getPuntos();
+            columna[3] = j.get(i).getPartGanados()+j.get(i).getPartEmpatados()+j.get(i).getPartPerdidos();
+            columna[4] = j.get(i).getPartGanados();
+            columna[5] = j.get(i).getPartEmpatados();
+            columna[6] = j.get(i).getPartPerdidos();
+            columna[7] = j.get(i).getgFavor();
+            columna[8] = j.get(i).getgContra();
             modeloTabClasi.addRow(columna);
         }
     }
@@ -100,7 +95,7 @@ public class VerClasificacion extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         tabClasi = new javax.swing.JTable();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         tabClasi.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {

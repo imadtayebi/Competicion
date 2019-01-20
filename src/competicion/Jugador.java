@@ -6,7 +6,7 @@ import java.util.concurrent.atomic.AtomicInteger;
  *
  * @author Imad
  */
-public class Jugador implements Comparable<Jugador>
+public class Jugador
 {
     private static final AtomicInteger count = new AtomicInteger(0);
     private String nombre;
@@ -77,7 +77,8 @@ public class Jugador implements Comparable<Jugador>
 
     public void setgFavor(int gFavor) 
     {
-        this.gFavor = gFavor;
+        this.gFavor = this.gFavor + gFavor;
+        System.out.println("Actualizado goles favor jugador " + this.nombre + " a: " + this.gFavor);
     }
 
     public int getgContra() 
@@ -87,7 +88,8 @@ public class Jugador implements Comparable<Jugador>
 
     public void setgContra(int gContra) 
     {
-        this.gContra = gContra;
+        this.gContra = this.gContra + gContra;
+        System.out.println("Actualizado goles contra jugador " + this.nombre + " a: " + this.gContra);
     }
 
     public int getPuntos() 
@@ -97,6 +99,7 @@ public class Jugador implements Comparable<Jugador>
 
     public void setPuntos(int puntos) 
     {
-        this.puntos = puntos;
+        this.puntos = this.puntos + puntos;
+        System.out.println("Actualizado puntos jugador " + this.nombre + " a: " + this.puntos);
     }
 }
