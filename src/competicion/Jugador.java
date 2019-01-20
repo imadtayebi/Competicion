@@ -39,9 +39,9 @@ public class Jugador
         return partGanados;
     }
 
-    public void setPartGanados(int partGanados) 
+    public void setPartGanados() 
     {
-        this.partGanados = partGanados;
+        this.partGanados++;
     }
 
     public int getPartPerdidos() 
@@ -49,9 +49,9 @@ public class Jugador
         return partPerdidos;
     }
 
-    public void setPartPerdidos(int partPerdidos) 
+    public void setPartPerdidos() 
     {
-        this.partPerdidos = partPerdidos;
+        this.partPerdidos++;
     }
 
     public int getPartEmpatados() 
@@ -59,9 +59,9 @@ public class Jugador
         return partEmpatados;
     }
 
-    public void setPartEmpatados(int partEmpatados) 
+    public void setPartEmpatados() 
     {
-        this.partEmpatados = partEmpatados;
+        this.partEmpatados++;
     }
 
     public int getgFavor() 

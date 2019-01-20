@@ -12,5 +12,4 @@ public abstract class Competicion {
     protected ArrayList<Partido> partidos;
 
     public void GenerarPartidos(ArrayList<Jugador> jugadores){};
-    
 }

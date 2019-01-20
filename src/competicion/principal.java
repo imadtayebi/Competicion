@@ -149,15 +149,7 @@ public class principal extends javax.swing.JFrame {
             competicion = new Torneo(jugadores);
         }
         competicion.GenerarPartidos(jugadores);
-        for(int i = 0; i < competicion.jugadores.size(); i++) 
-        {
-            System.out.println("Jugador "+competicion.jugadores.get(i).getId()+": "+competicion.jugadores.get(i).getNombre());
-        }
-        for (int i = 0; i < competicion.partidos.size(); i++)
-        {
-            System.out.println(competicion.partidos.get(i).getLocal()+"-"+competicion.partidos.get(i).getVisitante());
-        }
-        encurso ec = new encurso();
+        encurso ec = new encurso(competicion);
         ec.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_boton_creaCompetiActionPerformed

@@ -4,13 +4,15 @@ public class Partido
 {
     private String local;
     private String visitante;
-    private int[] goles;
+    private String golesL;
+    private String golesV;
     
     public Partido(String l, String v)
     {
         local = l;
         visitante = v;
-        goles = new int[2];
+        golesL = "";
+        golesV = "";
     }
     
     public String getLocal()
@@ -32,10 +34,21 @@ public class Partido
     {
         visitante = j;
     }
+
+    public String getGolesL() {
+        return golesL;
+    }
+
+    public void setGolesL(String golesL) {
+        this.golesL = golesL;
+    }
+
+    public String getGolesV() {
+        return golesV;
+    }
+
+    public void setGolesV(String golesV) {
+        this.golesV = golesV;
+    }
     
-    public void setGoles(int[] g)
-    {
-        goles[0] = g[0];
-        goles[1] = g[1];
-    }    
 }
