@@ -66,8 +66,6 @@ public class encurso extends javax.swing.JFrame {
     
     private void vaciarTabPartidos()
     {
-        //int i = modeloTabExp.getRowCount();
-        
         while (modeloTabPartidos.getRowCount() > 0)
             modeloTabPartidos.removeRow(0);
     }
@@ -171,14 +169,12 @@ public class encurso extends javax.swing.JFrame {
             {
                 encontrado1 = true;
                 indice1 = i;
-                System.out.println("encontrado local");
             }
             
             if(nV == competicion.jugadores.get(i).getNombre())
             {
                 encontrado2 = true;
                 indice2 = i;
-                System.out.println("encontrado visitante");
             }
             
             i++;
@@ -189,14 +185,12 @@ public class encurso extends javax.swing.JFrame {
             competicion.jugadores.get(indice1).setPartGanados();
             competicion.jugadores.get(indice1).setPuntos(3);
             competicion.jugadores.get(indice2).setPartPerdidos();
-            System.out.println("Local ganador");
         }
         else if(Integer.parseInt(gV) > Integer.parseInt(gL))
         {
             competicion.jugadores.get(indice2).setPartGanados();
             competicion.jugadores.get(indice2).setPuntos(3);
             competicion.jugadores.get(indice1).setPartPerdidos();
-            System.out.println("Visitante ganador");
         }
         else
         {
@@ -204,7 +198,6 @@ public class encurso extends javax.swing.JFrame {
             competicion.jugadores.get(indice1).setPuntos(1);
             competicion.jugadores.get(indice2).setPartEmpatados();
             competicion.jugadores.get(indice2).setPuntos(1);
-            System.out.println("Empate");
         }
         
         competicion.jugadores.get(indice1).setgFavor(Integer.parseInt(gL));
@@ -212,10 +205,8 @@ public class encurso extends javax.swing.JFrame {
         competicion.jugadores.get(indice2).setgFavor(Integer.parseInt(gV));
         competicion.jugadores.get(indice2).setgContra(Integer.parseInt(gL));
         
-        //tabPartidos.getModel().setValueAt(gL, index, 1);
-        //tabPartidos.getModel().setValueAt(gV, index, 2);
-        vaciarTabPartidos();
-        rellenarTabPartidos();
+        tabPartidos.getModel().setValueAt(gL, index, 1);
+        tabPartidos.getModel().setValueAt(gV, index, 2);
     }//GEN-LAST:event_tabPartidosMouseClicked
 
     private void botonClasificacionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonClasificacionActionPerformed
