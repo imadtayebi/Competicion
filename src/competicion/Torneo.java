@@ -19,7 +19,7 @@ public class Torneo extends Competicion {
     public void GenerarPartidos(ArrayList<Jugador> jugadores) {
         if(jugadores.size()%2 != 0)
         {
-            Jugador j = new Jugador("Descanso");
+            Jugador j = new Jugador("Campeón");
             jugadores.add(j);
         }
         Collections.shuffle(jugadores);

@@ -6,6 +6,7 @@ public class Partido
     private String visitante;
     private String golesL;
     private String golesV;
+    private String ganador;
     
     public Partido(String l, String v)
     {
@@ -49,6 +50,20 @@ public class Partido
 
     public void setGolesV(String golesV) {
         this.golesV = golesV;
+    }
+
+    /**
+     * @return the ganador
+     */
+    public String getGanador() {
+        return ganador;
+    }
+
+    /**
+     * @param ganador the ganador to set
+     */
+    public void setGanador(String ganador) {
+        this.ganador = ganador;
     }
     
 }

@@ -20,7 +20,7 @@ public class Liga extends Competicion {
         int numJug = jugadores.size();
         if(numJug%2 != 0)
         {
-            Jugador j = new Jugador("Descanso");
+            Jugador j = new Jugador("Campeón");
             numJug++;
             jugadores.add(j);
         }

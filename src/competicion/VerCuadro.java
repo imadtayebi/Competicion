@@ -59,49 +59,29 @@ public final class VerCuadro extends javax.swing.JFrame {
     }
 
     public void generarCuadro() {
+        encurso2 e = null;
+        ArrayList<Partido> p = new ArrayList();
+        p = competicion.partidos;
 
-        ArrayList<Jugador> j = new ArrayList<>();
-        j = competicion.jugadores;
+        for (int i = 0; i < competicion.jugadores.size() - 1; i++) {
+            if (competicion.jugadores.size() == 2) {
+                jLabel30.setText(p.get(i).getLocal());
+                jLabel31.setText(p.get(i).getVisitante());
+                jLabel32.setText(p.get(i).getGanador());
 
-        for (int i = 0; i < competicion.jugadores.size()-1; i++) {
-            if(competicion.jugadores.size()==2){
-                jLabel30.setText(j.get(i).getNombre());
-                jLabel31.setText(j.get(i+1).getNombre());
-                if(j.get(i).getgFavor()<j.get(i).getgContra()){
-                    j.remove(i);
-                }else{
-                    jLabel32.setText(j.get(i).getNombre());
-                }
-                
             }
-            if(competicion.jugadores.size()==4){
-                jLabel26.setText(j.get(i).getNombre());
-                jLabel27.setText(j.get(i+1).getNombre());
-                jLabel28.setText(j.get(i+2).getNombre());
-                jLabel29.setText(j.get(i+3).getNombre());
-                if(j.get(i).getgFavor()<j.get(i).getgContra()){
-                    j.remove(i);
-                }else{
-                    jLabel30.setText(j.get(i).getNombre());
-                }
-                if(j.get(i+1).getgFavor()<j.get(i+1).getgContra()){
-                    j.remove(i);
-                }
-                else{
-                    jLabel31.setText(j.get(i).getNombre());
-                }
-                
-                
+            if (competicion.jugadores.size() == 4) {
+                jLabel26.setText(p.get(i).getLocal());
+                jLabel27.setText(p.get(i).getVisitante());
+                jLabel28.setText(p.get(i + 1).getLocal());
+                jLabel29.setText(p.get(i + 1).getVisitante());
             }
-            if(competicion.jugadores.size()==8){
-                if(j.get(i).getgFavor()<j.get(i).getgContra()){
-                    j.remove(i);
-                }
+
+            if (competicion.jugadores.size() == 8) {
+
             }
-            if(competicion.jugadores.size()==16){
-                if(j.get(i).getgFavor()<j.get(i).getgContra()){
-                    j.remove(i);
-                }
+            if (competicion.jugadores.size() == 16) {
+
             }
         }
     }

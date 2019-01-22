@@ -52,7 +52,7 @@ public class encurso2 extends javax.swing.JFrame {
         tabPartidos.getColumnModel().getColumn(3).setPreferredWidth(50);
     }
     
-    private void rellenarTabPartidos()
+    public void rellenarTabPartidos()
     {
         Object[] columna = new Object[4];
         
@@ -64,6 +64,12 @@ public class encurso2 extends javax.swing.JFrame {
             columna[3] = competicion.partidos.get(i).getVisitante();
             modeloTabPartidos.addRow(columna);
         }
+    }
+    
+    public void vaciarTabPartidos()
+    {
+        while (modeloTabPartidos.getRowCount() > 0)
+            modeloTabPartidos.removeRow(0);
     }
     
     /**
@@ -160,6 +166,7 @@ public class encurso2 extends javax.swing.JFrame {
         boolean encontrado1 = false, encontrado2 = false;
         int i = 0;
         int indice1 = -1, indice2 = -1;
+        
         while((!encontrado1 || !encontrado2) && i < competicion.jugadores.size())
         {
             if(nL == competicion.jugadores.get(i).getNombre())
@@ -179,31 +186,34 @@ public class encurso2 extends javax.swing.JFrame {
         
         if(Integer.parseInt(gL) > Integer.parseInt(gV))
         {
-            competicion.jugadores.get(indice1).setPartGanados();
-            competicion.jugadores.get(indice1).setPuntos(3);
-            competicion.jugadores.get(indice2).setPartPerdidos();
-        }
-        else if(Integer.parseInt(gV) > Integer.parseInt(gL))
-        {
-            competicion.jugadores.get(indice2).setPartGanados();
-            competicion.jugadores.get(indice2).setPuntos(3);
-            competicion.jugadores.get(indice1).setPartPerdidos();
+            competicion.partidos.get(index).setGanador(competicion.jugadores.get(indice1).getNombre());
+            competicion.jugadores.remove(indice2);
         }
         else
         {
-            competicion.jugadores.get(indice1).setPartEmpatados();
-            competicion.jugadores.get(indice1).setPuntos(1);
-            competicion.jugadores.get(indice2).setPartEmpatados();
-            competicion.jugadores.get(indice2).setPuntos(1);
+            competicion.partidos.get(index).setGanador(competicion.jugadores.get(indice2).getNombre());
+            competicion.jugadores.remove(indice1);
         }
-        
-        competicion.jugadores.get(indice1).setgFavor(Integer.parseInt(gL));
-        competicion.jugadores.get(indice1).setgContra(Integer.parseInt(gV));
-        competicion.jugadores.get(indice2).setgFavor(Integer.parseInt(gV));
-        competicion.jugadores.get(indice2).setgContra(Integer.parseInt(gL));
         
         tabPartidos.getModel().setValueAt(gL, index, 1);
         tabPartidos.getModel().setValueAt(gV, index, 2);
+        
+        boolean vacio = false;
+        int j = 0;
+        while(!vacio && (j < competicion.partidos.size()))
+        {
+            if(competicion.partidos.get(j).getGolesL().equals(""))
+                vacio = true;
+            else
+                j++;
+        }
+        
+        if(!vacio)
+        {
+            competicion.GenerarPartidos(competicion.jugadores);
+            vaciarTabPartidos();
+            rellenarTabPartidos();
+        }
     }//GEN-LAST:event_tabPartidosMouseClicked
 
     private void botonVerCuadroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonVerCuadroActionPerformed
