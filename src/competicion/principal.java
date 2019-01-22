@@ -70,7 +70,7 @@ public class principal extends javax.swing.JFrame {
             }
         });
 
-        jLabel1.setText("Restricciones: En caso de elegir torneo, el número de jugadores debe ser 2, 4, 8, 16 ó 32");
+        jLabel1.setText("Restricciones: En caso de elegir torneo, el número de jugadores debe ser 2, 4, 8 ó 16");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -79,7 +79,7 @@ public class principal extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addContainerGap(633, Short.MAX_VALUE)
                         .addComponent(boton_creaCompeti))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(56, 56, 56)
@@ -99,7 +99,7 @@ public class principal extends javax.swing.JFrame {
                                         .addComponent(tf_numJug, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)))
                                 .addGap(18, 18, 18)
                                 .addComponent(button_creaJug)))
-                        .addGap(0, 108, Short.MAX_VALUE)))
+                        .addGap(32, 32, 32)))
                 .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
@@ -120,7 +120,7 @@ public class principal extends javax.swing.JFrame {
                         .addComponent(labelNumJug)))
                 .addGap(18, 18, 18)
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 47, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 49, Short.MAX_VALUE)
                 .addComponent(boton_creaCompeti, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
@@ -143,28 +143,33 @@ public class principal extends javax.swing.JFrame {
         if(rb_liga.isSelected())
         {
             competicion = new Liga(jugadores);
+            competicion.GenerarPartidos(jugadores);
+            encurso ec = new encurso(competicion);
+            ec.setVisible(true);
+            this.setVisible(false);
         }
         else
         {
             competicion = new Torneo(jugadores);
+            competicion.GenerarPartidos(jugadores);
+            encurso2 ec2 = new encurso2(competicion);
+            ec2.setVisible(true);
+            this.setVisible(false);
         }
-        competicion.GenerarPartidos(jugadores);
-        encurso ec = new encurso(competicion);
-        ec.setVisible(true);
-        this.setVisible(false);
+        
     }//GEN-LAST:event_boton_creaCompetiActionPerformed
 
     private void button_creaJugActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button_creaJugActionPerformed
         String nombre;
         jugadores = new ArrayList<>();
         Jugador j;
+        
         for(int i = 0; i < Integer.parseInt(tf_numJug.getText()); i++)
         {
             nombre = JOptionPane.showInputDialog("Introduce nombre del jugador "+(i+1)+":");
             j = new Jugador(nombre);
             jugadores.add(j);
         }
-        
     }//GEN-LAST:event_button_creaJugActionPerformed
 
     /**
