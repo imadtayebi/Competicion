@@ -1,6 +1,7 @@
 package competicion;
 
 
+import java.util.ArrayList;
 import javax.swing.JOptionPane;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
@@ -18,6 +19,7 @@ import javax.swing.table.DefaultTableModel;
 public class encurso2 extends javax.swing.JFrame {
 
     Competicion competicion;
+    ArrayList<Jugador> jug;
     
     DefaultTableModel modeloTabPartidos = new DefaultTableModel()
     {
@@ -31,6 +33,7 @@ public class encurso2 extends javax.swing.JFrame {
     public encurso2(Competicion c) {
         competicion = c;
         tabPartidos = new JTable(modeloTabPartidos);
+        jug = new ArrayList();
         initComponents();
         dibujaTabPartidos();
         rellenarTabPartidos();
@@ -212,6 +215,10 @@ public class encurso2 extends javax.swing.JFrame {
 
             if(!vacio)
             {
+                for (int k = competicion.partidos.size(); k > 0; k--) 
+                {
+                    competicion.partidos.remove(k-1);
+                }
                 competicion.GenerarPartidos(competicion.jugadores);
                 vaciarTabPartidos();
                 rellenarTabPartidos();
