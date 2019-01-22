@@ -30,31 +30,170 @@ public class VerCuadro extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel1 = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
+        jTextField1 = new javax.swing.JTextField();
+        jTextField2 = new javax.swing.JTextField();
+        jTextField3 = new javax.swing.JTextField();
+        jTextField4 = new javax.swing.JTextField();
+        jTextField5 = new javax.swing.JTextField();
+        jTextField6 = new javax.swing.JTextField();
+        jTextField7 = new javax.swing.JTextField();
+        jTextField8 = new javax.swing.JTextField();
+        jTextField9 = new javax.swing.JTextField();
+        jTextField10 = new javax.swing.JTextField();
+        jTextField11 = new javax.swing.JTextField();
+        jTextField12 = new javax.swing.JTextField();
+        jTextField13 = new javax.swing.JTextField();
+        jTextField14 = new javax.swing.JTextField();
+        jTextField15 = new javax.swing.JTextField();
+        jTextField16 = new javax.swing.JTextField();
+        jTextField17 = new javax.swing.JTextField();
+        jTextField18 = new javax.swing.JTextField();
+        jTextField19 = new javax.swing.JTextField();
+        jTextField20 = new javax.swing.JTextField();
+        jTextField21 = new javax.swing.JTextField();
+        jTextField22 = new javax.swing.JTextField();
+        jTextField23 = new javax.swing.JTextField();
+        jTextField24 = new javax.swing.JTextField();
+        jTextField25 = new javax.swing.JTextField();
+        jTextField26 = new javax.swing.JTextField();
+        jTextField27 = new javax.swing.JTextField();
+        jTextField28 = new javax.swing.JTextField();
+        jTextField29 = new javax.swing.JTextField();
+        jTextField30 = new javax.swing.JTextField();
+        jTextField31 = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        getContentPane().setLayout(null);
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 620, Short.MAX_VALUE)
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 655, Short.MAX_VALUE)
-        );
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/competicion/cuadro.jpg"))); // NOI18N
+        jLabel1.setPreferredSize(new java.awt.Dimension(620, 655));
+        getContentPane().add(jLabel1);
+        jLabel1.setBounds(0, 0, 620, 660);
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
+        jTextField1.setText("jTextField1");
+        getContentPane().add(jTextField1);
+        jTextField1.setBounds(20, 30, 59, 20);
+
+        jTextField2.setText("jTextField2");
+        getContentPane().add(jTextField2);
+        jTextField2.setBounds(20, 70, 59, 20);
+
+        jTextField3.setText("jTextField3");
+        getContentPane().add(jTextField3);
+        jTextField3.setBounds(20, 110, 59, 20);
+
+        jTextField4.setText("jTextField4");
+        getContentPane().add(jTextField4);
+        jTextField4.setBounds(20, 150, 59, 20);
+
+        jTextField5.setText("jTextField5");
+        getContentPane().add(jTextField5);
+        jTextField5.setBounds(20, 190, 59, 20);
+
+        jTextField6.setText("jTextField6");
+        getContentPane().add(jTextField6);
+        jTextField6.setBounds(20, 230, 59, 20);
+
+        jTextField7.setText("jTextField7");
+        getContentPane().add(jTextField7);
+        jTextField7.setBounds(20, 270, 59, 20);
+
+        jTextField8.setText("jTextField8");
+        getContentPane().add(jTextField8);
+        jTextField8.setBounds(20, 310, 59, 20);
+
+        jTextField9.setText("jTextField9");
+        getContentPane().add(jTextField9);
+        jTextField9.setBounds(20, 350, 59, 20);
+
+        jTextField10.setText("jTextField10");
+        getContentPane().add(jTextField10);
+        jTextField10.setBounds(20, 390, 65, 20);
+
+        jTextField11.setText("jTextField11");
+        getContentPane().add(jTextField11);
+        jTextField11.setBounds(20, 430, 65, 20);
+
+        jTextField12.setText("jTextField12");
+        getContentPane().add(jTextField12);
+        jTextField12.setBounds(20, 470, 65, 20);
+
+        jTextField13.setText("jTextField13");
+        getContentPane().add(jTextField13);
+        jTextField13.setBounds(20, 510, 65, 20);
+
+        jTextField14.setText("jTextField14");
+        getContentPane().add(jTextField14);
+        jTextField14.setBounds(20, 550, 65, 20);
+
+        jTextField15.setText("jTextField15");
+        getContentPane().add(jTextField15);
+        jTextField15.setBounds(20, 590, 65, 20);
+
+        jTextField16.setText("jTextField16");
+        getContentPane().add(jTextField16);
+        jTextField16.setBounds(20, 630, 65, 20);
+
+        jTextField17.setText("jTextField17");
+        getContentPane().add(jTextField17);
+        jTextField17.setBounds(150, 610, 65, 20);
+
+        jTextField18.setText("jTextField18");
+        getContentPane().add(jTextField18);
+        jTextField18.setBounds(150, 530, 65, 20);
+
+        jTextField19.setText("jTextField19");
+        getContentPane().add(jTextField19);
+        jTextField19.setBounds(150, 450, 65, 20);
+
+        jTextField20.setText("jTextField20");
+        getContentPane().add(jTextField20);
+        jTextField20.setBounds(150, 370, 65, 20);
+
+        jTextField21.setText("jTextField21");
+        getContentPane().add(jTextField21);
+        jTextField21.setBounds(150, 290, 65, 20);
+
+        jTextField22.setText("jTextField22");
+        getContentPane().add(jTextField22);
+        jTextField22.setBounds(150, 210, 65, 20);
+
+        jTextField23.setText("jTextField23");
+        getContentPane().add(jTextField23);
+        jTextField23.setBounds(150, 130, 65, 20);
+
+        jTextField24.setText("jTextField24");
+        getContentPane().add(jTextField24);
+        jTextField24.setBounds(150, 50, 65, 20);
+
+        jTextField25.setText("jTextField25");
+        getContentPane().add(jTextField25);
+        jTextField25.setBounds(280, 90, 65, 20);
+
+        jTextField26.setText("jTextField26");
+        getContentPane().add(jTextField26);
+        jTextField26.setBounds(280, 250, 65, 20);
+
+        jTextField27.setText("jTextField27");
+        getContentPane().add(jTextField27);
+        jTextField27.setBounds(280, 410, 65, 20);
+
+        jTextField28.setText("jTextField28");
+        getContentPane().add(jTextField28);
+        jTextField28.setBounds(280, 570, 65, 20);
+
+        jTextField29.setText("jTextField29");
+        getContentPane().add(jTextField29);
+        jTextField29.setBounds(410, 170, 65, 20);
+
+        jTextField30.setText("jTextField30");
+        getContentPane().add(jTextField30);
+        jTextField30.setBounds(410, 490, 65, 20);
+
+        jTextField31.setText("jTextField31");
+        getContentPane().add(jTextField31);
+        jTextField31.setBounds(540, 330, 65, 20);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -62,6 +201,37 @@ public class VerCuadro extends javax.swing.JFrame {
     
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JPanel jPanel1;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JTextField jTextField1;
+    private javax.swing.JTextField jTextField10;
+    private javax.swing.JTextField jTextField11;
+    private javax.swing.JTextField jTextField12;
+    private javax.swing.JTextField jTextField13;
+    private javax.swing.JTextField jTextField14;
+    private javax.swing.JTextField jTextField15;
+    private javax.swing.JTextField jTextField16;
+    private javax.swing.JTextField jTextField17;
+    private javax.swing.JTextField jTextField18;
+    private javax.swing.JTextField jTextField19;
+    private javax.swing.JTextField jTextField2;
+    private javax.swing.JTextField jTextField20;
+    private javax.swing.JTextField jTextField21;
+    private javax.swing.JTextField jTextField22;
+    private javax.swing.JTextField jTextField23;
+    private javax.swing.JTextField jTextField24;
+    private javax.swing.JTextField jTextField25;
+    private javax.swing.JTextField jTextField26;
+    private javax.swing.JTextField jTextField27;
+    private javax.swing.JTextField jTextField28;
+    private javax.swing.JTextField jTextField29;
+    private javax.swing.JTextField jTextField3;
+    private javax.swing.JTextField jTextField30;
+    private javax.swing.JTextField jTextField31;
+    private javax.swing.JTextField jTextField4;
+    private javax.swing.JTextField jTextField5;
+    private javax.swing.JTextField jTextField6;
+    private javax.swing.JTextField jTextField7;
+    private javax.swing.JTextField jTextField8;
+    private javax.swing.JTextField jTextField9;
     // End of variables declaration//GEN-END:variables
 }
