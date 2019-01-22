@@ -8,31 +8,104 @@ package competicion;
 import java.awt.Graphics;
 import java.awt.Image;
 import java.net.URL;
+import java.util.ArrayList;
 import javax.swing.ImageIcon;
 
 /**
  *
  * @author Fran
  */
-public class VerCuadro extends javax.swing.JFrame {
+public final class VerCuadro extends javax.swing.JFrame {
 
     Competicion competicion;
     private URL url;
     Image image;
-    
+
     public VerCuadro(Competicion c) {
         competicion = c;
         initComponents();
-        jTextField1.setText("imad");
-                
-        
+        jLabel2.setText("");
+        jLabel3.setText("");
+        jLabel4.setText("");
+        jLabel5.setText("");
+        jLabel6.setText("");
+        jLabel7.setText("");
+        jLabel8.setText("");
+        jLabel9.setText("");
+        jLabel10.setText("");
+        jLabel11.setText("");
+        jLabel12.setText("");
+        jLabel13.setText("");
+        jLabel14.setText("");
+        jLabel15.setText("");
+        jLabel16.setText("");
+        jLabel17.setText("");
+        jLabel18.setText("");
+        jLabel19.setText("");
+        jLabel20.setText("");
+        jLabel21.setText("");
+        jLabel22.setText("");
+        jLabel23.setText("");
+        jLabel24.setText("");
+        jLabel25.setText("");
+        jLabel26.setText("");
+        jLabel27.setText("");
+        jLabel28.setText("");
+        jLabel29.setText("");
+        jLabel30.setText("");
+        jLabel31.setText("");
+        jLabel32.setText("");
+        generarCuadro();
     }
 
-    public void generarCuadro()
-    {
-        
+    public void generarCuadro() {
+
+        ArrayList<Jugador> j = new ArrayList<>();
+        j = competicion.jugadores;
+
+        for (int i = 0; i < competicion.jugadores.size()-1; i++) {
+            if(competicion.jugadores.size()==2){
+                jLabel30.setText(j.get(i).getNombre());
+                jLabel31.setText(j.get(i+1).getNombre());
+                if(j.get(i).getgFavor()<j.get(i).getgContra()){
+                    j.remove(i);
+                }else{
+                    jLabel32.setText(j.get(i).getNombre());
+                }
+                
+            }
+            if(competicion.jugadores.size()==4){
+                jLabel26.setText(j.get(i).getNombre());
+                jLabel27.setText(j.get(i+1).getNombre());
+                jLabel28.setText(j.get(i+2).getNombre());
+                jLabel29.setText(j.get(i+3).getNombre());
+                if(j.get(i).getgFavor()<j.get(i).getgContra()){
+                    j.remove(i);
+                }else{
+                    jLabel30.setText(j.get(i).getNombre());
+                }
+                if(j.get(i+1).getgFavor()<j.get(i+1).getgContra()){
+                    j.remove(i);
+                }
+                else{
+                    jLabel31.setText(j.get(i).getNombre());
+                }
+                
+                
+            }
+            if(competicion.jugadores.size()==8){
+                if(j.get(i).getgFavor()<j.get(i).getgContra()){
+                    j.remove(i);
+                }
+            }
+            if(competicion.jugadores.size()==16){
+                if(j.get(i).getgFavor()<j.get(i).getgContra()){
+                    j.remove(i);
+                }
+            }
+        }
     }
-    
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -42,207 +115,206 @@ public class VerCuadro extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
+        jLabel10 = new javax.swing.JLabel();
+        jLabel11 = new javax.swing.JLabel();
+        jLabel12 = new javax.swing.JLabel();
+        jLabel13 = new javax.swing.JLabel();
+        jLabel14 = new javax.swing.JLabel();
+        jLabel15 = new javax.swing.JLabel();
+        jLabel16 = new javax.swing.JLabel();
+        jLabel17 = new javax.swing.JLabel();
+        jLabel18 = new javax.swing.JLabel();
+        jLabel19 = new javax.swing.JLabel();
+        jLabel20 = new javax.swing.JLabel();
+        jLabel21 = new javax.swing.JLabel();
+        jLabel22 = new javax.swing.JLabel();
+        jLabel23 = new javax.swing.JLabel();
+        jLabel24 = new javax.swing.JLabel();
+        jLabel25 = new javax.swing.JLabel();
+        jLabel26 = new javax.swing.JLabel();
+        jLabel27 = new javax.swing.JLabel();
+        jLabel28 = new javax.swing.JLabel();
+        jLabel29 = new javax.swing.JLabel();
+        jLabel30 = new javax.swing.JLabel();
+        jLabel31 = new javax.swing.JLabel();
+        jLabel32 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
-        jTextField2 = new javax.swing.JTextField();
-        jTextField3 = new javax.swing.JTextField();
-        jTextField4 = new javax.swing.JTextField();
-        jTextField5 = new javax.swing.JTextField();
-        jTextField6 = new javax.swing.JTextField();
-        jTextField7 = new javax.swing.JTextField();
-        jTextField8 = new javax.swing.JTextField();
-        jTextField9 = new javax.swing.JTextField();
-        jTextField10 = new javax.swing.JTextField();
-        jTextField11 = new javax.swing.JTextField();
-        jTextField12 = new javax.swing.JTextField();
-        jTextField13 = new javax.swing.JTextField();
-        jTextField14 = new javax.swing.JTextField();
-        jTextField15 = new javax.swing.JTextField();
-        jTextField16 = new javax.swing.JTextField();
-        jTextField17 = new javax.swing.JTextField();
-        jTextField18 = new javax.swing.JTextField();
-        jTextField19 = new javax.swing.JTextField();
-        jTextField20 = new javax.swing.JTextField();
-        jTextField21 = new javax.swing.JTextField();
-        jTextField22 = new javax.swing.JTextField();
-        jTextField23 = new javax.swing.JTextField();
-        jTextField24 = new javax.swing.JTextField();
-        jTextField25 = new javax.swing.JTextField();
-        jTextField26 = new javax.swing.JTextField();
-        jTextField27 = new javax.swing.JTextField();
-        jTextField28 = new javax.swing.JTextField();
-        jTextField29 = new javax.swing.JTextField();
-        jTextField30 = new javax.swing.JTextField();
-        jTextField31 = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         getContentPane().setLayout(null);
 
-        jLabel1.setPreferredSize(new java.awt.Dimension(620, 655));
+        jLabel2.setText("jLabel2");
+        getContentPane().add(jLabel2);
+        jLabel2.setBounds(30, 30, 34, 20);
+
+        jLabel3.setText("jLabel3");
+        getContentPane().add(jLabel3);
+        jLabel3.setBounds(30, 70, 34, 20);
+
+        jLabel4.setText("jLabel4");
+        getContentPane().add(jLabel4);
+        jLabel4.setBounds(30, 110, 34, 20);
+
+        jLabel5.setText("jLabel5");
+        getContentPane().add(jLabel5);
+        jLabel5.setBounds(30, 150, 34, 20);
+
+        jLabel6.setText("jLabel6");
+        getContentPane().add(jLabel6);
+        jLabel6.setBounds(30, 190, 34, 20);
+
+        jLabel7.setText("jLabel7");
+        getContentPane().add(jLabel7);
+        jLabel7.setBounds(30, 230, 34, 20);
+
+        jLabel8.setText("jLabel8");
+        getContentPane().add(jLabel8);
+        jLabel8.setBounds(30, 270, 34, 20);
+
+        jLabel9.setText("jLabel9");
+        getContentPane().add(jLabel9);
+        jLabel9.setBounds(30, 310, 34, 20);
+
+        jLabel10.setText("jLabel10");
+        getContentPane().add(jLabel10);
+        jLabel10.setBounds(30, 350, 40, 20);
+
+        jLabel11.setText("jLabel11");
+        getContentPane().add(jLabel11);
+        jLabel11.setBounds(30, 390, 40, 20);
+
+        jLabel12.setText("jLabel12");
+        getContentPane().add(jLabel12);
+        jLabel12.setBounds(30, 430, 40, 20);
+
+        jLabel13.setText("jLabel13");
+        getContentPane().add(jLabel13);
+        jLabel13.setBounds(30, 470, 40, 20);
+
+        jLabel14.setText("jLabel14");
+        getContentPane().add(jLabel14);
+        jLabel14.setBounds(30, 510, 40, 20);
+
+        jLabel15.setText("jLabel15");
+        getContentPane().add(jLabel15);
+        jLabel15.setBounds(30, 550, 40, 20);
+
+        jLabel16.setText("jLabel16");
+        getContentPane().add(jLabel16);
+        jLabel16.setBounds(30, 590, 40, 20);
+
+        jLabel17.setText("jLabel17");
+        getContentPane().add(jLabel17);
+        jLabel17.setBounds(30, 630, 40, 20);
+
+        jLabel18.setText("jLabel18");
+        getContentPane().add(jLabel18);
+        jLabel18.setBounds(160, 50, 40, 20);
+
+        jLabel19.setText("jLabel19");
+        getContentPane().add(jLabel19);
+        jLabel19.setBounds(160, 130, 40, 20);
+
+        jLabel20.setText("jLabel20");
+        getContentPane().add(jLabel20);
+        jLabel20.setBounds(160, 210, 40, 20);
+
+        jLabel21.setText("jLabel21");
+        getContentPane().add(jLabel21);
+        jLabel21.setBounds(160, 290, 40, 20);
+
+        jLabel22.setText("jLabel22");
+        getContentPane().add(jLabel22);
+        jLabel22.setBounds(160, 370, 40, 20);
+
+        jLabel23.setText("jLabel23");
+        getContentPane().add(jLabel23);
+        jLabel23.setBounds(160, 450, 40, 20);
+
+        jLabel24.setText("jLabel24");
+        getContentPane().add(jLabel24);
+        jLabel24.setBounds(160, 530, 40, 20);
+
+        jLabel25.setText("jLabel25");
+        getContentPane().add(jLabel25);
+        jLabel25.setBounds(160, 610, 40, 20);
+
+        jLabel26.setText("jLabel26");
+        getContentPane().add(jLabel26);
+        jLabel26.setBounds(290, 90, 40, 20);
+
+        jLabel27.setText("jLabel27");
+        getContentPane().add(jLabel27);
+        jLabel27.setBounds(290, 250, 40, 20);
+
+        jLabel28.setText("jLabel28");
+        getContentPane().add(jLabel28);
+        jLabel28.setBounds(290, 410, 40, 20);
+
+        jLabel29.setText("jLabel29");
+        getContentPane().add(jLabel29);
+        jLabel29.setBounds(290, 570, 40, 20);
+
+        jLabel30.setText("jLabel30");
+        getContentPane().add(jLabel30);
+        jLabel30.setBounds(420, 170, 40, 20);
+
+        jLabel31.setText("jLabel31");
+        getContentPane().add(jLabel31);
+        jLabel31.setBounds(420, 490, 40, 20);
+
+        jLabel32.setText("jLabel32");
+        getContentPane().add(jLabel32);
+        jLabel32.setBounds(550, 330, 40, 20);
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/competicion/cuadro.jpg"))); // NOI18N
         getContentPane().add(jLabel1);
         jLabel1.setBounds(0, 0, 620, 660);
-
-        jTextField1.setText("jTextField1");
-        getContentPane().add(jTextField1);
-        jTextField1.setBounds(20, 30, 59, 20);
-
-        jTextField2.setText("jTextField2");
-        getContentPane().add(jTextField2);
-        jTextField2.setBounds(20, 70, 59, 20);
-
-        jTextField3.setText("jTextField3");
-        getContentPane().add(jTextField3);
-        jTextField3.setBounds(20, 110, 59, 20);
-
-        jTextField4.setText("jTextField4");
-        getContentPane().add(jTextField4);
-        jTextField4.setBounds(20, 150, 59, 20);
-
-        jTextField5.setText("jTextField5");
-        getContentPane().add(jTextField5);
-        jTextField5.setBounds(20, 190, 59, 20);
-
-        jTextField6.setText("jTextField6");
-        getContentPane().add(jTextField6);
-        jTextField6.setBounds(20, 230, 59, 20);
-
-        jTextField7.setText("jTextField7");
-        getContentPane().add(jTextField7);
-        jTextField7.setBounds(20, 270, 59, 20);
-
-        jTextField8.setText("jTextField8");
-        getContentPane().add(jTextField8);
-        jTextField8.setBounds(20, 310, 59, 20);
-
-        jTextField9.setText("jTextField9");
-        getContentPane().add(jTextField9);
-        jTextField9.setBounds(20, 350, 59, 20);
-
-        jTextField10.setText("jTextField10");
-        getContentPane().add(jTextField10);
-        jTextField10.setBounds(20, 390, 65, 20);
-
-        jTextField11.setText("jTextField11");
-        getContentPane().add(jTextField11);
-        jTextField11.setBounds(20, 430, 65, 20);
-
-        jTextField12.setText("jTextField12");
-        getContentPane().add(jTextField12);
-        jTextField12.setBounds(20, 470, 65, 20);
-
-        jTextField13.setText("jTextField13");
-        getContentPane().add(jTextField13);
-        jTextField13.setBounds(20, 510, 65, 20);
-
-        jTextField14.setText("jTextField14");
-        getContentPane().add(jTextField14);
-        jTextField14.setBounds(20, 550, 65, 20);
-
-        jTextField15.setText("jTextField15");
-        getContentPane().add(jTextField15);
-        jTextField15.setBounds(20, 590, 65, 20);
-
-        jTextField16.setText("jTextField16");
-        getContentPane().add(jTextField16);
-        jTextField16.setBounds(20, 630, 65, 20);
-
-        jTextField17.setText("jTextField17");
-        getContentPane().add(jTextField17);
-        jTextField17.setBounds(150, 610, 65, 20);
-
-        jTextField18.setText("jTextField18");
-        getContentPane().add(jTextField18);
-        jTextField18.setBounds(150, 530, 65, 20);
-
-        jTextField19.setText("jTextField19");
-        getContentPane().add(jTextField19);
-        jTextField19.setBounds(150, 450, 65, 20);
-
-        jTextField20.setText("jTextField20");
-        getContentPane().add(jTextField20);
-        jTextField20.setBounds(150, 370, 65, 20);
-
-        jTextField21.setText("jTextField21");
-        getContentPane().add(jTextField21);
-        jTextField21.setBounds(150, 290, 65, 20);
-
-        jTextField22.setText("jTextField22");
-        getContentPane().add(jTextField22);
-        jTextField22.setBounds(150, 210, 65, 20);
-
-        jTextField23.setText("jTextField23");
-        getContentPane().add(jTextField23);
-        jTextField23.setBounds(150, 130, 65, 20);
-
-        jTextField24.setText("jTextField24");
-        getContentPane().add(jTextField24);
-        jTextField24.setBounds(150, 50, 65, 20);
-
-        jTextField25.setText("jTextField25");
-        getContentPane().add(jTextField25);
-        jTextField25.setBounds(280, 90, 65, 20);
-
-        jTextField26.setText("jTextField26");
-        getContentPane().add(jTextField26);
-        jTextField26.setBounds(280, 250, 65, 20);
-
-        jTextField27.setText("jTextField27");
-        getContentPane().add(jTextField27);
-        jTextField27.setBounds(280, 410, 65, 20);
-
-        jTextField28.setText("jTextField28");
-        getContentPane().add(jTextField28);
-        jTextField28.setBounds(280, 570, 65, 20);
-
-        jTextField29.setText("jTextField29");
-        getContentPane().add(jTextField29);
-        jTextField29.setBounds(410, 170, 65, 20);
-
-        jTextField30.setText("jTextField30");
-        getContentPane().add(jTextField30);
-        jTextField30.setBounds(410, 490, 65, 20);
-
-        jTextField31.setText("jTextField31");
-        getContentPane().add(jTextField31);
-        jTextField31.setBounds(540, 330, 65, 20);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField10;
-    private javax.swing.JTextField jTextField11;
-    private javax.swing.JTextField jTextField12;
-    private javax.swing.JTextField jTextField13;
-    private javax.swing.JTextField jTextField14;
-    private javax.swing.JTextField jTextField15;
-    private javax.swing.JTextField jTextField16;
-    private javax.swing.JTextField jTextField17;
-    private javax.swing.JTextField jTextField18;
-    private javax.swing.JTextField jTextField19;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField20;
-    private javax.swing.JTextField jTextField21;
-    private javax.swing.JTextField jTextField22;
-    private javax.swing.JTextField jTextField23;
-    private javax.swing.JTextField jTextField24;
-    private javax.swing.JTextField jTextField25;
-    private javax.swing.JTextField jTextField26;
-    private javax.swing.JTextField jTextField27;
-    private javax.swing.JTextField jTextField28;
-    private javax.swing.JTextField jTextField29;
-    private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField30;
-    private javax.swing.JTextField jTextField31;
-    private javax.swing.JTextField jTextField4;
-    private javax.swing.JTextField jTextField5;
-    private javax.swing.JTextField jTextField6;
-    private javax.swing.JTextField jTextField7;
-    private javax.swing.JTextField jTextField8;
-    private javax.swing.JTextField jTextField9;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel15;
+    private javax.swing.JLabel jLabel16;
+    private javax.swing.JLabel jLabel17;
+    private javax.swing.JLabel jLabel18;
+    private javax.swing.JLabel jLabel19;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel20;
+    private javax.swing.JLabel jLabel21;
+    private javax.swing.JLabel jLabel22;
+    private javax.swing.JLabel jLabel23;
+    private javax.swing.JLabel jLabel24;
+    private javax.swing.JLabel jLabel25;
+    private javax.swing.JLabel jLabel26;
+    private javax.swing.JLabel jLabel27;
+    private javax.swing.JLabel jLabel28;
+    private javax.swing.JLabel jLabel29;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel30;
+    private javax.swing.JLabel jLabel31;
+    private javax.swing.JLabel jLabel32;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     // End of variables declaration//GEN-END:variables
 }
