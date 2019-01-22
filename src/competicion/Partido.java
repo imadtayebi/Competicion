@@ -14,6 +14,7 @@ public class Partido
         visitante = v;
         golesL = "";
         golesV = "";
+        ganador = "";
     }
     
     public String getLocal()

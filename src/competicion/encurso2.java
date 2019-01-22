@@ -198,21 +198,24 @@ public class encurso2 extends javax.swing.JFrame {
         tabPartidos.getModel().setValueAt(gL, index, 1);
         tabPartidos.getModel().setValueAt(gV, index, 2);
         
-        boolean vacio = false;
-        int j = 0;
-        while(!vacio && (j < competicion.partidos.size()))
-        {
-            if(competicion.partidos.get(j).getGolesL().equals(""))
-                vacio = true;
-            else
-                j++;
-        }
-        
-        if(!vacio)
-        {
-            competicion.GenerarPartidos(competicion.jugadores);
-            vaciarTabPartidos();
-            rellenarTabPartidos();
+        if(competicion.jugadores.size() != 1)
+        {    
+            boolean vacio = false;
+            int j = 0;
+            while(!vacio && (j < competicion.partidos.size()))
+            {
+                if(competicion.partidos.get(j).getGolesL().equals(""))
+                    vacio = true;
+                else
+                    j++;
+            }
+
+            if(!vacio)
+            {
+                competicion.GenerarPartidos(competicion.jugadores);
+                vaciarTabPartidos();
+                rellenarTabPartidos();
+            }
         }
     }//GEN-LAST:event_tabPartidosMouseClicked
 

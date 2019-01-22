@@ -58,31 +58,57 @@ public final class VerCuadro extends javax.swing.JFrame {
         generarCuadro();
     }
 
-    public void generarCuadro() {
-        encurso2 e = null;
+    public void generarCuadro() 
+    {
         ArrayList<Partido> p = new ArrayList();
         p = competicion.partidos;
+        
+        if(competicion.jugadores.size() == 1)
+            jLabel32.setText(competicion.jugadores.get(0).getNombre());
+        
+        if (competicion.jugadores.size() == 2) 
+        {
+            jLabel30.setText(p.get(0).getLocal());
+            jLabel31.setText(p.get(0).getVisitante());
+        }
 
-        for (int i = 0; i < competicion.jugadores.size() - 1; i++) {
-            if (competicion.jugadores.size() == 2) {
-                jLabel30.setText(p.get(i).getLocal());
-                jLabel31.setText(p.get(i).getVisitante());
-                jLabel32.setText(p.get(i).getGanador());
+        if (competicion.jugadores.size() == 4) 
+        {
+            jLabel26.setText(p.get(0).getLocal());
+            jLabel27.setText(p.get(0).getVisitante());
+            jLabel28.setText(p.get(1).getLocal());
+            jLabel29.setText(p.get(1).getVisitante());
+        }
 
-            }
-            if (competicion.jugadores.size() == 4) {
-                jLabel26.setText(p.get(i).getLocal());
-                jLabel27.setText(p.get(i).getVisitante());
-                jLabel28.setText(p.get(i + 1).getLocal());
-                jLabel29.setText(p.get(i + 1).getVisitante());
-            }
-
-            if (competicion.jugadores.size() == 8) {
-
-            }
-            if (competicion.jugadores.size() == 16) {
-
-            }
+        if (competicion.jugadores.size() == 8) 
+        {
+            jLabel18.setText(p.get(0).getLocal());
+            jLabel19.setText(p.get(0).getVisitante());
+            jLabel20.setText(p.get(1).getLocal());
+            jLabel21.setText(p.get(1).getVisitante());
+            jLabel22.setText(p.get(2).getLocal());
+            jLabel23.setText(p.get(2).getVisitante());
+            jLabel24.setText(p.get(3).getLocal());
+            jLabel25.setText(p.get(3).getVisitante());
+        }
+        if (competicion.jugadores.size() == 16) 
+        {
+            jLabel2.setText(p.get(0).getLocal());
+            jLabel3.setText(p.get(0).getVisitante());
+            jLabel4.setText(p.get(1).getLocal());
+            jLabel5.setText(p.get(1).getVisitante());
+            jLabel6.setText(p.get(2).getLocal());
+            jLabel7.setText(p.get(2).getVisitante());
+            jLabel8.setText(p.get(3).getLocal());
+            jLabel9.setText(p.get(3).getVisitante());
+            jLabel10.setText(p.get(4).getLocal());
+            jLabel11.setText(p.get(4).getVisitante());
+            jLabel12.setText(p.get(5).getLocal());
+            jLabel13.setText(p.get(5).getVisitante());
+            jLabel14.setText(p.get(6).getLocal());
+            jLabel15.setText(p.get(6).getVisitante());
+            jLabel16.setText(p.get(7).getLocal());
+            jLabel17.setText(p.get(7).getVisitante());
         }
     }
 
