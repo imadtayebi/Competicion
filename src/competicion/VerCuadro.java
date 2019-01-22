@@ -23,6 +23,9 @@ public class VerCuadro extends javax.swing.JFrame {
     public VerCuadro(Competicion c) {
         competicion = c;
         initComponents();
+        jTextField1.setText("imad");
+                
+        
     }
 
     public void generarCuadro()
@@ -75,7 +78,6 @@ public class VerCuadro extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         getContentPane().setLayout(null);
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/competicion/cuadro.jpg"))); // NOI18N
         jLabel1.setPreferredSize(new java.awt.Dimension(620, 655));
         getContentPane().add(jLabel1);
         jLabel1.setBounds(0, 0, 620, 660);

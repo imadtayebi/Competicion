@@ -166,7 +166,7 @@ public class principal extends javax.swing.JFrame {
         
         if(rb_torneo.isSelected())
         {
-            if(tf_numJug.getText().equals(2) || tf_numJug.getText().equals(4) || tf_numJug.getText().equals(8) || tf_numJug.getText().equals(16))
+            if(tf_numJug.getText().equals("2") || tf_numJug.getText().equals("4") || tf_numJug.getText().equals("8") || tf_numJug.getText().equals("16"))
             {
                 for(int i = 0; i < Integer.parseInt(tf_numJug.getText()); i++)
                 {
