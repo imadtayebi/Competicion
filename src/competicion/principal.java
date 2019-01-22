@@ -164,11 +164,31 @@ public class principal extends javax.swing.JFrame {
         jugadores = new ArrayList<>();
         Jugador j;
         
-        for(int i = 0; i < Integer.parseInt(tf_numJug.getText()); i++)
+        if(rb_torneo.isSelected())
         {
-            nombre = JOptionPane.showInputDialog("Introduce nombre del jugador "+(i+1)+":");
-            j = new Jugador(nombre);
-            jugadores.add(j);
+            if(tf_numJug.getText().equals(2) || tf_numJug.getText().equals(4) || tf_numJug.getText().equals(8) || tf_numJug.getText().equals(16))
+            {
+                for(int i = 0; i < Integer.parseInt(tf_numJug.getText()); i++)
+                {
+                    nombre = JOptionPane.showInputDialog("Introduce nombre del jugador "+(i+1)+":");
+                    j = new Jugador(nombre);
+                    jugadores.add(j);
+                }
+            }
+            else
+            {
+                JOptionPane.showMessageDialog(null, "Numero jugadores incorrecto", "", JOptionPane.WARNING_MESSAGE);
+                tf_numJug.setText("");
+            }
+        }
+        else
+        {
+            for(int i = 0; i < Integer.parseInt(tf_numJug.getText()); i++)
+            {
+                nombre = JOptionPane.showInputDialog("Introduce nombre del jugador "+(i+1)+":");
+                j = new Jugador(nombre);
+                jugadores.add(j);
+            }
         }
     }//GEN-LAST:event_button_creaJugActionPerformed
 

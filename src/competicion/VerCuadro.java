@@ -5,6 +5,9 @@
  */
 package competicion;
 
+import java.awt.Graphics;
+import java.awt.Image;
+import java.net.URL;
 import javax.swing.ImageIcon;
 
 /**
@@ -14,13 +17,19 @@ import javax.swing.ImageIcon;
 public class VerCuadro extends javax.swing.JFrame {
 
     Competicion competicion;
+    private URL url;
+    Image image;
     
     public VerCuadro(Competicion c) {
         competicion = c;
         initComponents();
-        
     }
 
+    public void generarCuadro()
+    {
+        
+    }
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
