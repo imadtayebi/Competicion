@@ -78,7 +78,6 @@ public class Jugador
     public void setgFavor(int gFavor) 
     {
         this.gFavor = this.gFavor + gFavor;
-        //System.out.println("Actualizado goles favor jugador " + this.nombre + " a: " + this.gFavor);
     }
 
     public int getgContra() 
@@ -89,7 +88,6 @@ public class Jugador
     public void setgContra(int gContra) 
     {
         this.gContra = this.gContra + gContra;
-        //System.out.println("Actualizado goles contra jugador " + this.nombre + " a: " + this.gContra);
     }
 
     public int getPuntos() 
@@ -100,6 +98,5 @@ public class Jugador
     public void setPuntos(int puntos) 
     {
         this.puntos = this.puntos + puntos;
-        //System.out.println("Actualizado puntos jugador " + this.nombre + " a: " + this.puntos);
     }
 }

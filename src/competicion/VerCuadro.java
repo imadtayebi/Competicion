@@ -152,6 +152,7 @@ public final class VerCuadro extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setPreferredSize(new java.awt.Dimension(640, 700));
         getContentPane().setLayout(null);
 
         jLabel2.setText("jLabel2");
