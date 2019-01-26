@@ -2,7 +2,6 @@ package competicion;
 
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
-import javax.swing.JPanel;
 
 /**
  *
@@ -18,6 +17,7 @@ public class principal extends javax.swing.JFrame {
      */
     public principal() {
         initComponents();
+        tf_numJug.setEnabled(false);
     }
 
     /**
@@ -48,10 +48,20 @@ public class principal extends javax.swing.JFrame {
         buttonGroup1.add(rb_liga);
         rb_liga.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         rb_liga.setText("Liga");
+        rb_liga.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                rb_ligaActionPerformed(evt);
+            }
+        });
 
         buttonGroup1.add(rb_torneo);
         rb_torneo.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         rb_torneo.setText("Torneo");
+        rb_torneo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                rb_torneoActionPerformed(evt);
+            }
+        });
 
         labelNumJug.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
         labelNumJug.setText("Elegir número jugadores:");
@@ -163,10 +173,26 @@ public class principal extends javax.swing.JFrame {
         String nombre;
         jugadores = new ArrayList<>();
         Jugador j;
-        
-        if(rb_torneo.isSelected())
+        if(!tf_numJug.getText().equals(""))
         {
-            if(tf_numJug.getText().equals("2") || tf_numJug.getText().equals("4") || tf_numJug.getText().equals("8") || tf_numJug.getText().equals("16"))
+            if(rb_torneo.isSelected())
+            {
+                if(tf_numJug.getText().equals("2") || tf_numJug.getText().equals("4") || tf_numJug.getText().equals("8") || tf_numJug.getText().equals("16"))
+                {
+                    for(int i = 0; i < Integer.parseInt(tf_numJug.getText()); i++)
+                    {
+                        nombre = JOptionPane.showInputDialog("Introduce nombre del jugador "+(i+1)+":");
+                        j = new Jugador(nombre);
+                        jugadores.add(j);
+                    }
+                }
+                else
+                {
+                    JOptionPane.showMessageDialog(null, "Numero jugadores incorrecto", "", JOptionPane.WARNING_MESSAGE);
+                    tf_numJug.setText("");
+                }
+            }
+            else
             {
                 for(int i = 0; i < Integer.parseInt(tf_numJug.getText()); i++)
                 {
@@ -175,22 +201,19 @@ public class principal extends javax.swing.JFrame {
                     jugadores.add(j);
                 }
             }
-            else
-            {
-                JOptionPane.showMessageDialog(null, "Numero jugadores incorrecto", "", JOptionPane.WARNING_MESSAGE);
-                tf_numJug.setText("");
-            }
         }
         else
-        {
-            for(int i = 0; i < Integer.parseInt(tf_numJug.getText()); i++)
-            {
-                nombre = JOptionPane.showInputDialog("Introduce nombre del jugador "+(i+1)+":");
-                j = new Jugador(nombre);
-                jugadores.add(j);
-            }
-        }
+            JOptionPane.showMessageDialog(null, "No ha introducido número de jugadores", "", JOptionPane.WARNING_MESSAGE);
+
     }//GEN-LAST:event_button_creaJugActionPerformed
+
+    private void rb_ligaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rb_ligaActionPerformed
+        tf_numJug.setEnabled(true);
+    }//GEN-LAST:event_rb_ligaActionPerformed
+
+    private void rb_torneoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rb_torneoActionPerformed
+        tf_numJug.setEnabled(true);
+    }//GEN-LAST:event_rb_torneoActionPerformed
 
     /**
      * @param args the command line arguments

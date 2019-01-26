@@ -127,6 +127,9 @@
             </Property>
             <Property name="text" type="java.lang.String" value="Liga"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="rb_ligaActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JRadioButton" name="rb_torneo">
           <Properties>
@@ -138,6 +141,9 @@
             </Property>
             <Property name="text" type="java.lang.String" value="Torneo"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="rb_torneoActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JLabel" name="labelNumJug">
           <Properties>
